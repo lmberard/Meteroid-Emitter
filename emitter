@@ -1,0 +1,43 @@
+const Scene = require('Scene');
+const Animation = require('Animation');
+
+//Toma los emitter y le cambia los valores de rgb y el size 
+Scene.root.findFirst('fuego_tail').then(emitter => {
+	emitter.hsvaColorModulationModifier = Animation.samplers.HSVA([
+		Animation.samplers.constant(1),
+		Animation.samplers.constant(1),
+		Animation.samplers.constant(1),
+		Animation.samplers.easeInQuad(1, 0)
+	]);
+	emitter.sizeModifier = Animation.samplers.easeInCirc(0, -0.06);
+});
+
+Scene.root.findFirst('fuego_chunks').then(emitter => {
+	emitter.hsvaColorModulationModifier = Animation.samplers.HSVA([
+		Animation.samplers.constant(1),
+		Animation.samplers.constant(1),
+		Animation.samplers.constant(1),
+		Animation.samplers.easeInQuad(1, 0)
+	]);
+	emitter.sizeModifier = Animation.samplers.easeInCirc(0, -0.06);
+});
+
+Scene.root.findFirst('fuego_cloud').then(emitter => {
+	emitter.hsvaColorModulationModifier = Animation.samplers.HSVA([
+		Animation.samplers.constant(1),
+		Animation.samplers.constant(1),
+		Animation.samplers.constant(1),
+		Animation.samplers.easeInQuad(1, 0)
+	]);
+	emitter.sizeModifier = Animation.samplers.easeInCirc(0, -0.1);
+});
+
+Scene.root.findFirst('fuego_add').then(emitter => {
+	emitter.hsvaColorModulationModifier = Animation.samplers.HSVA([
+		Animation.samplers.constant(1),
+		Animation.samplers.constant(1),
+		Animation.samplers.constant(1),
+		Animation.samplers.easeInQuad(1, 0)
+	]);
+	emitter.sizeModifier = Animation.samplers.easeInCirc(0, -0.08);
+});
